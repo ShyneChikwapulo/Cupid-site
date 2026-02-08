@@ -1,21 +1,220 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="styles.css" />
-    <title>Ask For Date</title>
-  </head>
-  <body>
-    <img src="assets/date.png" alt="date?" class="header-img" />
-    <div class="container" id="container">
-      <img src="assets/dog-4480-256-unscreen.gif" alt="please" class="image-1" />
-      <button class="btn btn-yes">Yes</button>
-      <button class="btn btn-no">No👀</button>
-      <img src="assets/speech.gif" alt="Yes" class="image-3 hide" />
-     
-      <span id="hover-text"></span> 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Lily - Valentine's Day Surprise</title>
+    <link rel="stylesheet" href="styles/fonts.css">
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="styles/animations.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&family=Great+Vibes&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Landing Page -->
+    <div id="landing-page" class="page active">
+        <div class="floating-hearts"></div>
+        <div class="main-content">
+            <div class="landing-content">
+                <h1 class="landing-title">To Lily</h1>
+                <p class="landing-subtitle">My Little Angel 💕</p>
+                <div class="heart-icon">
+                    <i class="fas fa-heart"></i>
+                </div>
+                <button id="enter-btn" class="action-btn">
+                    Open Your Valentine's Day Surprise
+                </button>
+            </div>
+        </div>
     </div>
-    <script src="main.js"></script>
-  </body>
+
+    <!-- Question Page -->
+    <div id="question-page" class="page">
+        <div class="animated-background"></div>
+        <div class="question-content">
+            <div class="question-header">
+                <h1>Will You Be My Valentine?</h1>
+                <p>Lily, my little angel 💕</p>
+            </div>
+            
+            <div class="puppy-image">
+                <img src="images/puppies.jpg" alt="Cute puppy" class="puppy-img" onerror="this.src='images/fallback.jpg'">
+                <div class="floating-heart">❤️</div>
+            </div>
+            
+            <div class="buttons-area">
+                <button id="yes-btn" class="yes-btn">Yes! 💕</button>
+                <button id="no-btn" class="no-btn">No 😢</button>
+            </div>
+            
+            <div id="teasing-message" class="teasing-message"></div>
+            <div id="attempt-counter" class="attempt-counter"></div>
+        </div>
+    </div>
+
+    <!-- Letter Page -->
+    <div id="letter-page" class="page">
+        <div class="sparkles-container"></div>
+        <div class="letter-content">
+            <div id="letter-instruction" class="letter-instruction">
+                <p>Click the envelope to read your letter 💌</p>
+            </div>
+            
+            <div class="envelope-container">
+                <div class="envelope" id="envelope">
+                    <div class="letter" id="letter">
+                        <div class="letter-content-inner">
+                            <div class="letter-header">
+                                <h2>My Dearest Lily 🌹</h2>
+                                <div class="hearts-row">
+                                    <i class="fas fa-heart"></i>
+                                    <i class="fas fa-heart"></i>
+                                    <i class="fas fa-heart"></i>
+                                </div>
+                            </div>
+                            
+                            <div class="letter-body">
+                                <p>Three years ago, I made you my girlfriend. Looking back at it now, it seems so far, like back then I didn't fully understand the depth of my love for you.</p>
+                                
+                                <p>But just as my emotional intelligence has grown, so has my love for you. Every day with you teaches me something new about what it means to truly love someone.</p>
+                                
+                                <p class="italic-text">"I only ever thought there were two types of love: The kind you'd kill for, and the kind you'd die for. But for you my darling, you are the kind of love I would live for."</p>
+                                
+                                <p>You are my comfort, my peace, and everything I could wish for. You literally stole my heart and now I can't see myself without you. You came into my life like a ray of light and made me forget about everything - until I said those three words without a shred of doubt.</p>
+                                
+                                <p>You're my little angel, my lily boo, my guiding star forever watching over me. My heart is warmer because you moved in there. You're heaven sent, and I thank the universe every day for bringing you to me.</p>
+                                
+                                <p class="bold-text">Happy Valentine's Day 2026, my love.</p>
+                                
+                                <p>To me and you forever, love you always. 💕</p>
+                                
+                                <div class="letter-signature">
+                                    <p>From your dramatic, fly, handsome,</p>
+                                    <p>multi-talented boyfriend</p>
+                                    <p class="signature-name">Forever yours ❤️</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="envelope-back"></div>
+                    <div class="envelope-flap" id="envelope-flap">
+                        <div class="heart-seal">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                    </div>
+                    <div class="envelope-front"></div>
+                </div>
+            </div>
+            
+            <button id="continue-btn" class="action-btn continue-btn">There's More... 💝</button>
+        </div>
+    </div>
+
+    <!-- Surprise Page -->
+    <div id="surprise-page" class="page">
+        <div class="floating-hearts-surprise"></div>
+        <div class="surprise-content">
+
+        <div class="book-container">
+                    <div class="memory-book">
+                        <div id="book-pages" class="book-pages-wrapper">
+                            <div class="book-page cover">
+                                <div class="book-page-content">
+                                    <i class="fas fa-heart" style="font-size: 3rem; color: white;"></i>
+                                    <h2 style="font-family: 'Great Vibes', cursive; font-size: 2.5rem; margin-top: 1rem;">Our Memories</h2>
+                                    <p style="font-size: 1rem; opacity: 0.9;">To My Little Angel, Lily</p>
+                                </div>
+                            </div>
+                            <div class="book-page"></div> <div class="book-page">
+                                <div class="book-page-content memory-layout">
+                                    <h3>The Beginning</h3>
+                                    <p>It’s been an incredible journey since we first Got together. Looking back at these moments makes me realize how lucky I am.</p>
+                                </div>
+                            </div>
+                            <div class="book-page">
+                                <div class="book-page-content memory-img-layout">
+                                    <img src="images/62E7D.jpg" alt="Memory 1">
+                                </div>
+                            </div>
+
+                            <div class="book-page">
+                                <div class="book-page-content memory-img-layout">
+                                    <img src="images/IMG_8077.jpg" alt="Memory 2">
+                                </div>
+                            </div>
+                            <div class="book-page">
+                                <div class="book-page-content memory-layout">
+                                    <h3>Why I Love You</h3>
+                                    <p>Your smile, your kindness, and the way you make everything better just by being there. You are my world.</p>
+                                </div>
+                            </div>
+                            <div class="book-page">
+                                <div class="book-page-content memory-img-layout">
+                                    <img src="images/IMG_4486.jpeg" alt="Memory 2">
+                                </div>
+                            </div>
+
+                            <div class="book-page">
+                                <div class="book-page-content memory-layout">
+                                    <h3>My poem from me to you</h3>
+                                    <p>My love for you grows each day,In such a special, tender way.You are my heartbeat, my shining light,Making everything in my world feel right.Happy Valentine’s Day!</p>
+                                </div>
+                            </div>
+
+                            <div class="book-page">
+                                <div class="book-page-content memory-layout">
+                                    <p>To many more chapters together...</p>
+                                </div>
+                            </div>
+                            <div class="book-page last-page">
+                                <div class="book-page-content">
+                                    <h2 style="font-family: 'Great Vibes'; color: var(--rose-600);">Forever Yours</h2>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="flip-hint"><i class="fas fa-hand-pointer"></i> Tap the pages to flip</p>
+                </div>
+
+            <div class="surprise-header">
+                <div class="animated-heart">Scroll👇🏿</div>
+                <h1>All The Things You Love</h1>
+                <p>...and I love that you love them 💕</p>
+            </div>
+            
+            <div class="gallery-grid" id="gallery"></div>
+            
+            <div class="final-message">
+                <div class="message-container">
+                    <div class="animated-heart-final">💖</div>
+                    <h2>But Most Of All...</h2>
+                    <p class="main-message">
+                        I love <span class="highlight">YOU</span>, Lily. 
+                        <br>
+                        My little angel, my everything. 💕
+                    </p>
+                    <div class="quotes">
+                        <p class="italic-quote">"To me and you forever, love you always"</p>
+                        <p class="valentine-wish">Happy Valentine's Day 2026! 🌹</p>
+                    </div>
+                    <div class="floating-hearts-final"></div>
+                </div>
+            </div>
+            
+            <div class="footer-note">
+                <p>Made with 💕 by your dramatic, fly, handsome, multi-talented boyfriend</p>
+                <p>2026 Edition - Now with better code AND more love 😌</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="scripts/main.js"></script>
+    <script src="scripts/landing-page.js"></script>
+    <script src="scripts/letter-page.js"></script>
+    <script src="scripts/question-page.js"></script>
+    <script src="scripts/surprise-page.js"></script>
+</body>
 </html>
